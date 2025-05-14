@@ -10,6 +10,7 @@ This project provides both tools and rendering libraries for working with Lava a
 .
 ├── Docs/                    # Format specs, API usage, and documentation
 │   ├── format.md            # In-depth description of Lava's manifest and image layout
+│   ├── packing.md           # Custom Lava packing algorithm explanation
 │   ├── packages.md          # Notes on the Swift package implementation
 │   └── tools.md             # Python tool usage and conversion tips
 │
@@ -19,6 +20,7 @@ This project provides both tools and rendering libraries for working with Lava a
 │
 ├── Packages/
 │   └── MoltenLava/          # Swift package implementation of Lava player
+│   └── LavaSerpent/         # Python package for working with Lava animations
 ├── Tools/
 │   └── convert_to_webm.py   # Python utility for rendering to .webm
 │
