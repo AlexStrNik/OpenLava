@@ -1,125 +1,55 @@
 # OpenLava
 
-**OpenLava** is a reverse engineering project targeting **Lava**, a custom media format developed by Airbnb. This format is designed for compact, tile-based animations—possibly used for animated UI elements or splash experiences.
+**OpenLava** is an open-source implementation of the **Lava** media format, originally created by Airbnb. Lava is a tile-based animation format optimized for lightweight, high-performance animations.
 
-> ⚠️ This project is for educational and research purposes only. No proprietary code or logic has been decompiled or reverse-engineered beyond analyzing static media assets included within an iOS IPA package.
+This project provides both tools and rendering libraries for working with Lava assets on macOS, iOS, and beyond.
 
-## 📁 File Format Overview
+## 📁 Project Structure
 
-The Lava format appears as a folder (or archive-like structure) containing media and a manifest. It is extracted from iOS `.ipa` packages, typically located under the app's assets.
-
-Each Lava animation contains:
-
-- `manifest.json` — metadata and animation logic
-- `image_1.avif` — base image (first frame or tile atlas)
-- `image_2.avif` — large diff tile atlas used for updating tiles across frames
-
-> **Note**: File names can vary. The manifest provides references via the `images` array.
-
-## 🧾 Manifest Structure
-
-Example `manifest.json`:
-
-```json
-{
-  "version": 1,
-  "fps": 30,
-  "cellSize": 32,
-  "diffImageSize": 2048,
-  "width": 180,
-  "height": 162,
-  "density": 2,
-  "alpha": true,
-  "images": [{ "url": "image_1.avif" }, { "url": "image_2.avif" }],
-  "frames": [
-    { "type": "key", "imageIndex": 0 },
-    {
-      "type": "diff",
-      "diffs": [
-        [0, 4, 2, 6, 4],
-        [0, 24, 4, 2, 24],
-        [0, 0, 4, 1, 0],
-        ...
-      ]
-    }
-  ]
-}
+```
+.
+├── Docs/                    # Format specs, API usage, and documentation
+│   ├── format.md            # In-depth description of Lava's manifest and image layout
+│   ├── packages.md          # Notes on the Swift package implementation
+│   └── tools.md             # Python tool usage and conversion tips
+│
+├── Examples/
+│   ├── Media/               # Extracted example Lava assets (.avif + manifest.json)
+│   └── MoltenLavaExample/   # Xcode app project demonstrating real-time playback
+│
+├── Packages/
+│   └── MoltenLava/          # Swift package implementation of Lava player
+├── Tools/
+│   └── convert_to_webm.py   # Python utility for rendering to .webm
+│
+└── Readme.md
 ```
 
-### Key Fields:
+## 📚 Documentation
 
-- `fps`: Frames per second for playback
-- `cellSize`: Size (in pixels) of a square tile (e.g., 32x32)
-- `diffImageSize`: Width of the diff tileset image (`image_2`)
-- `width` / `height`: Dimensions of the full frame (in pixels)
-- `density`: Likely linked to Apple’s display scale factor (e.g., Retina = 2)
-- `alpha`: Whether the frames include transparency
-- `images`: A list of image files, typically `[base_image, diff_tileset]`
+- [Docs/format.md](Docs/format.md) – Lava manifest structure, tile math, and rendering logic
+- [Docs/tools.md](Docs/tools.md) – Python script usage for exporting animations
+- [Docs/packages.md](Docs/packages.md) – Swift package details for real-time rendering with Metal
 
-## 🎞 Frame Types
+Sure, here's the revised section:
 
-Two types of frames exist:
+## 🔍 Example Media
 
-### Key Frame
+Browse the `Examples/Media/` folder for Lava animations extracted from the Airbnb app. These assets are provided strictly for demonstrating format compatibility and renderer behavior.
 
-```json
-{ "type": "key", "imageIndex": 0 }
-```
+> ⚠️ **Important Notice**:
+> The media files in this repository are included under fair use for educational and interoperability purposes only. **Do not reuse, redistribute, or embed these assets in your own applications or projects.** If you are affiliated with Airbnb and would like any content removed, please open an issue.
 
-Just displays the full image directly (typically the base).
+## 🚀 Roadmap
 
-### Diff Frame
+The next feature planned for development is the converter/packager that will allow conversion from frames to the Lava format. This tool will help in creating Lava animations by converting frames into the required tile-based structure and packaging them into the specific format, including the necessary manifest.
 
-```json
-{
-  "type": "diff",
-  "diffs": [
-    [source, src_tile_index, x_tiles, y_tiles, dest_tile_index],
-    ...
-  ]
-}
-```
+## 🧑‍💻 Contributions
 
-Diff-based frame composed by copying tiles.
+Pull requests and issues are welcome! If you’ve discovered a new variant of the format or want to extend the tooling, feel free to contribute.
 
-### Tile Coordinates:
+## 📄 License
 
-To calculate tile pixel coordinates:
+This project is open-source under the MIT license. It is **not affiliated with Airbnb**, and no proprietary code or internals have been used or reused.
 
-```python
-src_x = (tile_index % tiles_per_row) * cell_size
-src_y = (tile_index // tiles_per_row) * cell_size
-```
-
-Where:
-
-- `tiles_per_row = ceil(image_width / cell_size)`
-- `tile_index` is either the source or destination tile index
-
-## 🐍 Python Library
-
-A simple Python utility is included to:
-
-- Parse Lava manifests
-- Reconstruct all frames
-- Export animation as a transparent `.webm` video
-
-### Requirements
-
-- Python 3.11+
-- `Pillow`
-- `ffmpeg` (must be installed on your system)
-
-### Usage
-
-```bash
-python3.11 convert_to_webm.py examples/m13HomepageExperiencesTabInitialAnimationLavaAssets test.webm
-```
-
-You may also modify the script to export as a GIF (without alpha).
-
-## ⚠️ Legal Disclaimer
-
-This repository is provided **strictly for educational purposes**. It does **not** include any reverse-engineered source code or proprietary algorithms. The only extracted materials are media files (`.avif`, `.json`) used for format analysis and placed under the `examples/` directory.
-
-Copying, distributing, or reusing original assets from Airbnb’s app outside of fair use (such as this analysis) is **prohibited**. If you are affiliated with Airbnb and have concerns, please contact the repository owner to discuss removal or licensing.
+If you're from Airbnb and have questions or concerns, please reach out respectfully via the issue tracker.
