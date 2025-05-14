@@ -1,6 +1,6 @@
 [project]
 name = "lava-serpent"
-version = "0.1.1"
+version = "0.1.2"
 description = ""
 authors = [{ name = "alexstrnik", email = "alex.str.nik@gmail.com" }]
 readme = "README.md"

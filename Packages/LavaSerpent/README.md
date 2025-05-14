@@ -21,6 +21,7 @@ Requires:
 
 - Python 3.10+
 - [Pillow](https://python-pillow.org/) with AVIF support (e.g., via `pillow-avif-plugin`)
+- [RectanglePacker](https://rectangle-packer.readthedocs.io)
 
 ## 🚀 Usage
 
@@ -99,13 +100,13 @@ LavaSerpent includes a simple CLI for packing and unpacking animations directly 
 
 ```bash
 # Pack frames into Lava format
-poetry run lava-serpent pack Frames/frame_%04d.avif OutputLava
+poetry run lava_serpent pack Frames/frame_%04d.avif OutputLava
 
 # Unpack a Lava package into individual frames
-poetry run lava-serpent unpack LavaDir Frames
+poetry run lava_serpent unpack LavaDir Frames
 ```
 
-You can also use this via `python -m lavaserpent` if you prefer.
+You can also use this via `python -m lava_serpent` or `lava-serpent` if you prefer.
 
 ## 👋 Contributing
 

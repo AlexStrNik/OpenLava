@@ -5,7 +5,7 @@ This repository includes a Python script to process Lava animations and convert 
 ## 🛠 Requirements
 
 - Python 3.11+
-- [`Pillow`](https://python-pillow.org/)
+- [`lava-serpent`](https://pypi.org/project/lava-serpent/)
 - [`ffmpeg`](https://ffmpeg.org/) installed system-wide
 
 ## 📤 Export to WebM
@@ -25,9 +25,9 @@ python3.11 Tools/convert_to_webm.py Examples/Media/m13HomepageExperiencesTabInit
 The script:
 
 1. Parses the `manifest.json`
-2. Loads AVIF images as `.png`
-3. Reconstructs each animation frame from key/diff logic
-4. Uses `ffmpeg` to encode a transparent WebM file
+   ~~2. Reconstructs each animation frame from key/diff logic~~
+2. Uses `lava-serpent` to unpack frames
+3. Uses `ffmpeg` to encode a transparent WebM file
 
 ## 🎨 Output Format
 

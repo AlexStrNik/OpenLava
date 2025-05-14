@@ -13,6 +13,16 @@
 
 See [`Examples/MoltenLavaExample`](../Examples/MoltenLavaExample) for a minimal SwiftUI app demonstrating real-time Lava animation playback.
 
+## LavaSerpent
+
+[`LavaSerpent`](../Packages/LavaSerpent) is a Python package for working with the Lava format from a tooling perspective. It supports:
+
+- Converting sequences of AVIF frames into optimized Lava packages
+- Unpacking Lava directories back into individual frames
+- JSON parsing and serialization of manifest structure using Python dataclasses
+
+See its [dedicated README](../Packages/LavaSerpent/README.md) for full documentation and CLI usage.
+
 ## 🧪 Planned Packages
 
 Future implementations are planned in:

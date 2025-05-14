@@ -30,8 +30,7 @@ This project provides both tools and rendering libraries for working with Lava a
 - [Docs/format.md](Docs/format.md) – Lava manifest structure, tile math, and rendering logic
 - [Docs/tools.md](Docs/tools.md) – Python script usage for exporting animations
 - [Docs/packages.md](Docs/packages.md) – Swift package details for real-time rendering with Metal
-
-Sure, here's the revised section:
+- [Docs/packing.md](Docs/packing.md) – Custom Lava packing algorithm explanation
 
 ## 🔍 Example Media
 
@@ -42,7 +41,11 @@ Browse the `Examples/Media/` folder for Lava animations extracted from the Airbn
 
 ## 🚀 Roadmap
 
-The next feature planned for development is the converter/packager that will allow conversion from frames to the Lava format. This tool will help in creating Lava animations by converting frames into the required tile-based structure and packaging them into the specific format, including the necessary manifest.
+Planned features and improvements for future development:
+
+- **Size Optimization:** Explore strategies for further reducing the size of packed Lava assets, including improved tile deduplication and patch reuse.
+- **`.lava` / `.olava` Archive Support:** Add support for bundled Lava formats (`.lava` or `.olava`), which are simply zipped folders containing the manifest and associated assets. This will be implemented across both the Python and Swift packages.
+- **Flutter Renderer:** Develop a cross-platform Flutter renderer to enable Lava playback on Android, iOS, and web platforms.
 
 ## 🧑‍💻 Contributions
 

@@ -24,7 +24,7 @@ def unpack_frames(lava_path: str, output_path: str):
         frames.append(frame)
 
     for i, frame in enumerate(frames):
-        frame.save(f"{output_path}/frame_{i:04}.png", quality=100)
+        frame.save(f"{output_path}/frame_{i:04}.avif", quality=100)
 
 
 def get_frame(lava_path: str, manifest: LavaManifest, frame: LavaFrame):
