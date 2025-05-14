@@ -19,7 +19,7 @@ python3.11 Tools/convert_to_webm.py <lava_folder> <output.webm>
 Example:
 
 ```bash
-python3.11 Tools/convert_to_webm.py Examples/m13HomepageExperiencesTabInitialAnimationLavaAssets test.webm
+python3.11 Tools/convert_to_webm.py Examples/Media/m13HomepageExperiencesTabInitialAnimationLavaAssets test.webm
 ```
 
 The script:

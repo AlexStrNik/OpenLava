@@ -1,59 +1,47 @@
-import sys
-import os
 import json
-import subprocess
 from math import ceil
 import pillow_avif
 from PIL import Image
 
+from .lava_manifest import LavaManifest, LavaFrame
 
-def convert_to_webm(lava_path, output_path):
+
+def unpack_frames(lava_path: str, output_path: str):
+    """
+    Unpacks a Lava animation into individual frame images.
+
+    Args:
+        lava_path (str): Path to a Lava package directory containing manifest and images.
+        output_path (str): Directory where extracted frames will be saved.
+    """
+
     with open(f"{lava_path}/manifest.json", "r") as f:
-        manifest = json.load(f)
+        manifest = LavaManifest.from_dict(json.load(f))
 
     frames = []
-    for frame in manifest["frames"]:
+    for frame in manifest.frames:
         frame = get_frame(lava_path, manifest, frame)
         frames.append(frame)
 
     for i, frame in enumerate(frames):
-        frame.save(f"{lava_path}/frame_{i:04}.png", quality=100)
-
-    subprocess.run(
-        [
-            "ffmpeg",
-            "-framerate",
-            str(manifest["fps"]),
-            "-i",
-            f"{lava_path}/frame_%04d.png",
-            "-c:v",
-            "libvpx-vp9",
-            "-pix_fmt",
-            "yuv420p",
-            output_path,
-        ]
-    )
-
-    # Clean up temporary files
-    for i in range(len(frames)):
-        os.remove(f"{lava_path}/frame_{i:04}.png")
+        frame.save(f"{output_path}/frame_{i:04}.png", quality=100)
 
 
-def get_frame(lava_path, manifest, frame):
-    cell_size = manifest["cellSize"]
+def get_frame(lava_path: str, manifest: LavaManifest, frame: LavaFrame):
+    cell_size = manifest.cellSize
     images = []
-    for image in manifest["images"]:
-        png_path = image["url"]
+    for image in manifest.images:
+        png_path = image.url
         images.append(
             Image.open(f"{lava_path}/{png_path}").copy()
         )
 
-    if frame["type"] == "key":
-        return images[frame["imageIndex"]]
-    elif frame["type"] == "diff":
+    if frame.type == "key":
+        return images[frame.imageIndex]
+    elif frame.type == "diff":
         frame_image = Image.new("RGBA", (images[0].width, images[0].height))
 
-        for entry in frame["diffs"]:
+        for entry in frame.diffs:
             source, src_tile_index, x_count, y_count, target_tile_index = entry
 
             src_width = ceil(images[source].width / cell_size)
@@ -74,11 +62,4 @@ def get_frame(lava_path, manifest, frame):
 
         return frame_image
     else:
-        raise ValueError(f"Unknown frame type: {frame['type']}")
-
-
-if __name__ == "__main__":
-    lava_path = sys.argv[1]
-    output_path = sys.argv[2]
-
-    convert_to_webm(lava_path, output_path)
+        raise ValueError(f"Unknown frame type: {frame.type}")
