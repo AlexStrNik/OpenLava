@@ -1,6 +1,6 @@
 [project]
 name = "lava-serpent"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = [{ name = "alexstrnik", email = "alex.str.nik@gmail.com" }]
 readme = "README.md"
@@ -12,10 +12,10 @@ dependencies = [
 ]
 
 [tool.poetry]
-packages = [{ include = "lava-serpent" }]
+packages = [{ include = "lava_serpent" }]
 
 [tool.poetry.scripts]
-lava-serpent = "lava-serpent.cli:main"
+lava-serpent = "lava_serpent.cli:main"
 
 
 [build-system]
