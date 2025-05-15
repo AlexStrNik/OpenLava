@@ -88,10 +88,6 @@ def unpack_frames(
     """
 ```
 
-Here's the updated section of the `README.md` including a note and usage example for the simple CLI:
-
----
-
 ## 🧰 Command-Line Interface (CLI)
 
 LavaSerpent includes a simple CLI for packing and unpacking animations directly from the terminal.
