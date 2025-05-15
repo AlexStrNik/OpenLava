@@ -33,8 +33,8 @@ This project provides both tools and rendering libraries for working with Lava a
 ## 📚 Documentation
 
 - [Docs/format.md](Docs/format.md) – Lava manifest structure, tile math, and rendering logic
-- [Docs/tools.md](Docs/tools.md) – Python script usage for exporting animations
-- [Docs/packages.md](Docs/packages.md) – Swift package details for real-time rendering with Metal
+- [Docs/tools.md](Docs/tools.md) – Some tools for working with Lava animations
+- [Docs/packages.md](Docs/packages.md) – Documentation for the Swift, Flutter and Python packages
 - [Docs/packing.md](Docs/packing.md) – Custom Lava packing algorithm explanation
 
 ## 🔍 Example Media
