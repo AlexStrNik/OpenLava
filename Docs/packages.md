@@ -42,7 +42,6 @@ See [`Examples/LavaPhoenixExample`](../Examples/LavaPhoenixExample) for a minima
 Future implementations are planned in:
 
 - Web (WebGL or WebGPU)
-- Flutter
 - Compose (Not really, i hate android sry)
 
 ## 🤝 Contributing
