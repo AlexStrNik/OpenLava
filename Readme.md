@@ -16,11 +16,14 @@ This project provides both tools and rendering libraries for working with Lava a
 │
 ├── Examples/
 │   ├── Media/               # Extracted example Lava assets (.avif + manifest.json)
+│   ├── LavaPhoenixExample/  # Flutter app project demonstrating real-time playback
 │   └── MoltenLavaExample/   # Xcode app project demonstrating real-time playback
 │
 ├── Packages/
 │   └── MoltenLava/          # Swift package implementation of Lava player
+│   └── LavaPhoenix/         # Flutter package implementation of Lava player
 │   └── LavaSerpent/         # Python package for working with Lava animations
+│
 ├── Tools/
 │   └── convert_to_webm.py   # Python utility for rendering to .webm
 │
@@ -45,9 +48,9 @@ Browse the `Examples/Media/` folder for Lava animations extracted from the Airbn
 
 Planned features and improvements for future development:
 
-- **Size Optimization:** Explore strategies for further reducing the size of packed Lava assets, including improved tile deduplication and patch reuse.
-- **`.lava` / `.olava` Archive Support:** Add support for bundled Lava formats (`.lava` or `.olava`), which are simply zipped folders containing the manifest and associated assets. This will be implemented across both the Python and Swift packages.
-- **Flutter Renderer:** Develop a cross-platform Flutter renderer to enable Lava playback on Android, iOS, and web platforms.
+- **Size Optimization:** PIL codec produces larger files than expected.
+- **`.lava` / `.olava` Archive Support:** Add support for bundled Lava formats (`.lava` or `.olava`), which are simply zipped folders containing the manifest and associated assets. This will be implemented across the Python, Swift and Dart packages.
+- ~~**Flutter Renderer:** Develop a cross-platform Flutter renderer to enable Lava playback on Android, iOS, and web platforms.~~
 
 ## 🧑‍💻 Contributions
 

@@ -1,0 +1,19 @@
+name: lava_phoenix
+description: A cross-platform Flutter renderer for Lava animation format, compatible with iOS, Android, and Web.
+version: 0.0.1
+homepage: https://github.com/AlexStrNik/OpenLava
+
+environment:
+  sdk: ^3.5.3
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:

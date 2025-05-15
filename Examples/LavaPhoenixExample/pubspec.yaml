@@ -1,0 +1,25 @@
+name: lava_example
+description: "LavaPhoenix Example"
+publish_to: "none"
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+  lava_phoenix:
+    path: ../../Packages/LavaPhoenix
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/m13HomepageExperiencesTabInitialAnimationSelectedLavaAssets/
