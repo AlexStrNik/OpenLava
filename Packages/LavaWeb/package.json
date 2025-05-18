@@ -1,0 +1,30 @@
+{
+  "name": "lava-web",
+  "version": "1.0.0",
+  "description": "WebGL-based Lava animation renderer for web applications",
+  "type": "module",
+  "main": "dist/lava-web.js",
+  "module": "dist/lava-web.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "lava",
+    "animation",
+    "webgl",
+    "renderer"
+  ],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "build": "vite build && tsc --emitDeclarationOnly",
+    "watch": "vite build --watch"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.18",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
+    "vite-plugin-dts": "^3.7.0"
+  }
+}

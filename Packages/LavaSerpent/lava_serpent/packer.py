@@ -271,7 +271,7 @@ def build_diff_patches(tile_map: TileMap) -> DiffPatches:
     )
 
 
-def pack_patches(patches: List[Patch]) -> PackedPatches:
+def pack_patches(patches: List[Patch], tile_size: int) -> PackedPatches:
     rectangles = []
     id_map = {}
 
@@ -280,7 +280,9 @@ def pack_patches(patches: List[Patch]) -> PackedPatches:
         patch_w = len(patch.tiles[0])
         rectangles.append((patch_w, patch_h))
 
-    positions = rpack.pack(rectangles)
+    max_size = 16_384 // tile_size
+
+    positions = rpack.pack(rectangles, max_width=max_size, max_height=max_size)
     bin_w, bin_h = rpack.bbox_size(rectangles, positions)
 
     for idx, patch in enumerate(patches):
@@ -405,7 +407,7 @@ def pack_frames(
     frames = load_frames(frames_path, frame_pattern)
     tile_map = build_tile_map(frames, tile_size)
     diff_patches = build_diff_patches(tile_map)
-    packed_patches = pack_patches(diff_patches.patches)
+    packed_patches = pack_patches(diff_patches.patches, tile_size)
     diff_image = build_diff_image(
         packed_patches,
         diff_patches.patches,
@@ -421,4 +423,4 @@ def pack_frames(
     manifest = build_manifest(frames, tile_size, diff_patches, packed_patches)
 
     with open(f"{output_path}/manifest.json", "w") as f:
-        json.dump(asdict(manifest), f, indent=4)
+        json.dump(asdict(manifest), f, separators=(',', ':'))

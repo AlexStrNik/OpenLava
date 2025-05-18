@@ -23,7 +23,7 @@ See [`Examples/MoltenLavaExample`](../Examples/MoltenLavaExample) for a minimal 
 
 See its [dedicated README](../Packages/LavaSerpent/README.md) for full documentation and CLI usage.
 
-## 🔥 LavaPhoenix
+## LavaPhoenix
 
 [`LavaPhoenix`](../Packages/LavaPhoenix) is a Flutter package that provides a GPU-accelerated renderer for Lava animations across Android, iOS, and Web — with no platform views. It includes:
 
@@ -36,6 +36,20 @@ See its [dedicated README](../Packages/LavaSerpent/README.md) for full documenta
 ### Example
 
 See [`Examples/LavaPhoenixExample`](../Examples/LavaPhoenixExample) for a minimal Flutter app that demonstrates real-time playback of a Lava animation using `LavaView` and `LavaController`.
+
+## LavaWeb
+
+[`LavaWeb`](../Packages/LavaWeb) is a WebGL-based renderer for Lava animations, providing smooth GPU-accelerated playback directly in the browser. It features:
+
+- Efficient WebGL rendering with custom shader pipelines
+- Asynchronous asset loading and animation control via `LavaRenderer`
+- Full browser compatibility with no third-party plugins
+- Real-time performance optimized for low CPU usage
+- Tile atlas and manifest parsing entirely in JavaScript or TypeScript
+
+### Example
+
+See [`Examples/LavaWebExample`](../Examples/LavaWebExample) for a minimal React app that demonstrates real-time playback of a Lava animation using `LavaRenderer`.
 
 ## 🧪 Planned Packages
 
