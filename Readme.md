@@ -17,14 +17,17 @@ This project provides both tools and rendering libraries for working with Lava a
 ├── Examples/
 │   ├── Media/               # Extracted example Lava assets (.avif + manifest.json)
 │   ├── LavaPhoenixExample/  # Flutter app project demonstrating real-time playback
+│   ├── LavaWebExample/      # Web app project demonstrating real-time playback
 │   └── MoltenLavaExample/   # Xcode app project demonstrating real-time playback
 │
 ├── Packages/
-│   └── MoltenLava/          # Swift package implementation of Lava player
-│   └── LavaPhoenix/         # Flutter package implementation of Lava player
+│   ├── MoltenLava/          # Swift package implementation of Lava player
+│   ├── LavaPhoenix/         # Flutter package implementation of Lava player
+│   ├── LavaWeb/             # Web package implementation of Lava player
 │   └── LavaSerpent/         # Python package for working with Lava animations
 │
 ├── Tools/
+│   ├── download_apple.py    # Python script for downloading and converting Apple Airpods Pro animation
 │   └── convert_to_webm.py   # Python utility for rendering to .webm
 │
 └── Readme.md
