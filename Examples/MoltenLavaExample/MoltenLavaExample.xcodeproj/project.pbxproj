@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		986B20DD2DF23392002DE25F /* MoltenLava in Frameworks */ = {isa = PBXBuildFile; productRef = 986B20DC2DF23392002DE25F /* MoltenLava */; };
 		988CF5772DD503AB002F97B3 /* MoltenLava in Frameworks */ = {isa = PBXBuildFile; productRef = 988CF5762DD503AB002F97B3 /* MoltenLava */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				988CF5772DD503AB002F97B3 /* MoltenLava in Frameworks */,
+				986B20DD2DF23392002DE25F /* MoltenLava in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +76,7 @@
 			name = MoltenLavaExample;
 			packageProductDependencies = (
 				988CF5762DD503AB002F97B3 /* MoltenLava */,
+				986B20DC2DF23392002DE25F /* MoltenLava */,
 			);
 			productName = MoltenLavaExample;
 			productReference = 988CF55F2DD5031F002F97B3 /* MoltenLavaExample.app */;
@@ -104,7 +107,7 @@
 			mainGroup = 988CF5562DD5031F002F97B3;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				988CF5752DD503AB002F97B3 /* XCLocalSwiftPackageReference "../../Packages/MoltenLava" */,
+				986B20DB2DF23392002DE25F /* XCRemoteSwiftPackageReference "MoltenLava" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 988CF5602DD5031F002F97B3 /* Products */;
@@ -348,14 +351,23 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		988CF5752DD503AB002F97B3 /* XCLocalSwiftPackageReference "../../Packages/MoltenLava" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../../Packages/MoltenLava;
+/* Begin XCRemoteSwiftPackageReference section */
+		986B20DB2DF23392002DE25F /* XCRemoteSwiftPackageReference "MoltenLava" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OpenLavaFormat/MoltenLava";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
 		};
-/* End XCLocalSwiftPackageReference section */
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		986B20DC2DF23392002DE25F /* MoltenLava */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 986B20DB2DF23392002DE25F /* XCRemoteSwiftPackageReference "MoltenLava" */;
+			productName = MoltenLava;
+		};
 		988CF5762DD503AB002F97B3 /* MoltenLava */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MoltenLava;

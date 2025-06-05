@@ -1,6 +1,6 @@
 # 🔥 LavaPhoenix
 
-**LavaPhoenix** is a cross-platform Flutter renderer for [Lava animation format](https://github.com/AlexStrNik/OpenLava). It enables efficient tile-based animation playback with real-time performance — powered purely by Flutter rendering, without using platform views.
+**LavaPhoenix** is a cross-platform Flutter renderer for [Lava animation format](https://github.com/OpenLavaFormat/OpenLava). It enables efficient tile-based animation playback with real-time performance — powered purely by Flutter rendering, without using platform views.
 
 Designed to work seamlessly on **iOS**, **Android**, and **Web**.
 
@@ -69,7 +69,7 @@ LavaView(controller: controller)
 
 A full working example can be found in the repository:
 
-[**OpenLava/Example/LavaPhoenixExample**](https://github.com/AlexStrNik/OpenLava/tree/main/Example/LavaPhoenixExample)
+[**OpenLava/Example/LavaPhoenixExample**](https://github.com/OpenLavaFormat/OpenLava/tree/main/Example/LavaPhoenixExample)
 
 You can run it via:
 

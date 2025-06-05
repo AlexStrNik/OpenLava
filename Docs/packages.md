@@ -2,7 +2,7 @@
 
 ## MoltenLava
 
-[`MoltenLava`](../Packages/MoltenLava) is a Swift package that provides a real-time renderer for Lava animations using Metal. It includes:
+[`MoltenLava`](https://github.com/OpenLavaFormat/MoltenLava) is a Swift package that provides a real-time renderer for Lava animations using Metal. It includes:
 
 - Tile-based frame decoding using `MTLBlitCommandEncoder`
 - Manifest and image parsing

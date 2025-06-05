@@ -21,7 +21,7 @@ This project provides both tools and rendering libraries for working with Lava a
 │   └── MoltenLavaExample/   # Xcode app project demonstrating real-time playback
 │
 ├── Packages/
-│   ├── MoltenLava/          # Swift package implementation of Lava player
+│   ├── MoltenLava/          # Now a standalone repository
 │   ├── LavaPhoenix/         # Flutter package implementation of Lava player
 │   ├── LavaWeb/             # Web package implementation of Lava player
 │   └── LavaSerpent/         # Python package for working with Lava animations

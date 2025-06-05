@@ -1,0 +1,15 @@
+{
+  "originHash" : "3a5547d61cd8e9f2a4bb57ccdb60003f8796baa50c63ae6c3b49a6859e241eb2",
+  "pins" : [
+    {
+      "identity" : "moltenlava",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/OpenLavaFormat/MoltenLava",
+      "state" : {
+        "branch" : "main",
+        "revision" : "867c1a15b9376d232dd978ab280699d7f9f15637"
+      }
+    }
+  ],
+  "version" : 3
+}
